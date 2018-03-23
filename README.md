@@ -1,3 +1,3 @@
-# Aout Data-compression
+# Aout Data compression
 
 
