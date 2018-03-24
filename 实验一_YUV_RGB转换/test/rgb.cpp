@@ -62,15 +62,11 @@ int main()
             g_cnt[g[i]]++;
             b_cnt[b[i]]++;
         }
-        cout << "debug " << endl;
-        system("pause");
         for(int i = 0; i < 256; i++){
             p_r[i] = (double)r_cnt[i] / (256.0*256.0);
             p_g[i] = (double)g_cnt[i] / (256.0*256.0);
             p_b[i] = (double)b_cnt[i] / (256.0*256.0);
         }
-        cout << "debug " << endl;
-        system("pause");
         for(int i = 0; i < 256; i++){
             H_R += cal_p_log_p(p_r[i]);
             H_G += cal_p_log_p(p_g[i]);
