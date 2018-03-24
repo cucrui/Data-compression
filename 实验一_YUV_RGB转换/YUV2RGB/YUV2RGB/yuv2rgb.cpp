@@ -8,15 +8,6 @@
 #define u_int8_t	unsigned __int8 
 
 using namespace std;
-/************************************************************************
-*
-*  int YUV2YUV (int x_dim, int y_dim, void *y_in, void *u_in, void *v_in, void *rgb_out, int flip)
-*
-*	Purpose :	yuv 420 convert to rgb 444
-*
-*	cucrui
-************************************************************************/
-
 
 static float YUV_RGB1402[256];
 static float YUV_RGB0344[256];
@@ -32,11 +23,6 @@ int YUV2RGB(int X_DIM, int Y_DIM, void *y_in, void *u_in, void *v_in, unsigned c
 	unsigned char *sub_u_buf = (unsigned char *)u_in;
 	unsigned char *sub_v_buf = (unsigned char *)v_in;
 	
-	unsigned char *r = (unsigned char *)malloc(size);
-	unsigned char *g = (unsigned char *)malloc(size);
-	unsigned char *b = (unsigned char *)malloc(size);
-	unsigned char *rgb = (unsigned char *)malloc(size * 3);
-	
 	unsigned char *u_buffer = (unsigned char *)malloc(size);
 	unsigned char *v_buffer = (unsigned char *)malloc(size);
 	
@@ -49,18 +35,11 @@ int YUV2RGB(int X_DIM, int Y_DIM, void *y_in, void *u_in, void *v_in, unsigned c
 	}
 
 	if ((X_DIM % 2) || (Y_DIM % 2)) return 1;
-	
-	cout << "debug allocate" << endl;
-	system("pause");
 
-	if (!(u_buffer && v_buffer && r && g && b && rgb))
+	if (!(u_buffer && v_buffer))
 	{
 		if (u_buffer) free(u_buffer);
 		if (v_buffer) free(v_buffer);
-		if (r) free(r);
-		if (g) free(g);
-		if (b) free(b);
-		if(rgb) free(rgb);
 		return 2;
 	}
 	
@@ -97,9 +76,7 @@ int YUV2RGB(int X_DIM, int Y_DIM, void *y_in, void *u_in, void *v_in, unsigned c
 	y = y_buffer;
 	u = u_buffer;
 	v = v_buffer;
-	//yuv to rgb
 	float tem;
-	//freopen("out.txt", "w", stdout);
 	for(int i = 0, j = 0; i < size; i++){
 		tem = (*y) + YUV_RGB1402[*v];
 		rgb_out[j + 2] = tem > 255 ? 255 : (tem < 0 ? 0 : (unsigned char)tem);
@@ -107,21 +84,14 @@ int YUV2RGB(int X_DIM, int Y_DIM, void *y_in, void *u_in, void *v_in, unsigned c
 		rgb_out[j + 1] = tem > 255 ? 255 : (tem < 0 ? 0 : (unsigned char)tem);
 		tem = (*y) + YUV_RGB1772[*u];
 		rgb_out[j] = tem > 255 ? 255 : (tem < 0 ? 0 : (unsigned char)tem);
-		//cout << "r=" << (int)*r << " g=" << (int)*g << " b=" << (int)*b << endl;
 		y++; u++; v++;
 		j += 3;
 	}
-	
-	cout << "debug rgb to rgb_out success" << endl;
-	system("pause");
-	
-	//why can't free memory here r, g, b is not the first address of this memory!
-	/*free(u_buffer);
-	free(v_buffer);
-	free(r);
-	free(g);
-	free(b);
-	free(rgb);*/
+	if (!(u_buffer && v_buffer))
+	{
+		if (u_buffer) free(u_buffer);
+		if (v_buffer) free(v_buffer);
+	}
 	return 0;
 }
 
