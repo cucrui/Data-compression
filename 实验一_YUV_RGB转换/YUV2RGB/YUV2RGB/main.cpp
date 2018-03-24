@@ -12,21 +12,12 @@ using namespace std;
 #define FALSE		false
 #define TRUE		true
 
-/*
- * yuv2rgb
- * required arg1 should be the input RAW yuv422 file
- * required arg2 should be the output RAW Yrgb444 file
- */ 
-
 int main(int argc, char** argv)
 {
-	/* variables controlable from command line */
-	u_int frameWidth = 352;			/* --width=<uint> */
-	u_int frameHeight = 240;		/* --height=<uint> */
-	bool flip = TRUE;				/* --flip */
+	u_int frameWidth = 352;			
+	u_int frameHeight = 240;		
+	bool flip = TRUE;				
 	
-	/*cout << frameWidth * frameHeight << endl;
-	system("pause");*/
 	char* rgbFileName = NULL;
 	char* yuvFileName = NULL;
 
@@ -77,23 +68,12 @@ int main(int argc, char** argv)
 		printf("no enought memory\n");
 		exit(1);
 	}
-	//freopen("out.txt", "w", stdout);
 	u_int en = frameHeight * frameHeight;
 	while (fread(yuvBuf, 1, (u_int)(frameWidth * frameHeight * 1.5), yuvFile)){
 		//size_t fread ( void * ptr, size_t size, size_t count, FILE * stream );
 		yBuf = yuvBuf;
 		uBuf = yuvBuf + (u_int)(frameWidth * frameHeight);
 		vBuf = uBuf + (u_int)(frameWidth * frameHeight * 0.25);
-		/*for (int i = 0; i < en; i++) {
-			cout << "i = " <<i << "yBUf = "<< (int)yBuf[i] << endl;
-		}
-		for (int i = 0; i < en/4; i++) {
-			cout << "i = " << i << "uBUf = " << (int)uBuf[i] << endl;
-		}
-		for (int i = 0; i < en / 4; i++) {
-			cout << "i = " << i << "vBUf = " << (int)vBuf[i] << endl;
-		}*/
-		system("pause");
 		if(YUV2RGB(frameWidth, frameHeight, yBuf, uBuf, vBuf, rgbBuf, flip)){
 			printf("error");
 			return 0;
@@ -108,7 +88,6 @@ int main(int argc, char** argv)
 	free(yuvBuf);
 	free(rgbBuf);
 	
-
 	fclose(rgbFile);
 	fclose(yuvFile);
 	system("pause");
