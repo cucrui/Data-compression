@@ -32,7 +32,7 @@ void write_txt(){
 
 double cal_p_log_p(double p){
     if(fabs(p - 0.0) < eps) return 0;
-    else return -p * log(p);
+    else return -p * (log(p) / log(2));
 }
 
 int main()
