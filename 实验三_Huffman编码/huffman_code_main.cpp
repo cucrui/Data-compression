@@ -56,14 +56,12 @@ void gen_code(Node *leaf){
 		tem = p;
 		code_len++;
 	}
-	cout << "code_len : " << code_len;
 	char *str = leaf->code;
 	str[idx] = '\0';
 	int len = strlen(str);
 	for (int i = 0; i < len / 2 ; i++) {
 		swap(str[i], str[len - i - 1]);
 	}
-	cout << " code : " << leaf->code << endl;
 	index[leaf->data]->code_len = code_len;
 }
 
@@ -94,8 +92,8 @@ void dfs_decode(char *c, Node *now, int *len) {
 int main(){
 	FILE *input_file;
 	int total_cnt = 0;
-	unsigned int c; //ÉùÃ÷³ÆÎÞ·ûºÅÕûÐÍ ¸ºÊý»áµ¼ÖÂÔ½½ç
-	cout << "ÊäÈëÎÄ¼þÃû £º" << endl;
+	unsigned int c; //å£°æ˜Žç§°æ— ç¬¦å·æ•´åž‹ è´Ÿæ•°ä¼šå¯¼è‡´è¶Šç•Œ
+	cout << "è¾“å…¥æ–‡ä»¶å ï¼š" << endl;
 	char in_name[256], out_name[256], out_txt[256];
 	cin >> in_name;
 
@@ -113,7 +111,8 @@ int main(){
 	out_txt[pos+5] = 't';out_txt[pos+6] = 'x';out_txt[pos+7] = 't';out_txt[pos+8] = '\0';
 
 	cout << in_name << " " << out_name << " " << out_txt << endl;
-	input_file = fopen(in_name, "rb"); //rbÄ£Ê½ ¶ø²»ÊÇrÄ£Ê½£¡£¡£¡
+	
+	input_file = fopen(in_name, "rb"); //rbæ¨¡å¼ è€Œä¸æ˜¯ræ¨¡å¼ï¼ï¼ï¼
 
 	if(!input_file){
 		cout << "can not open file" << endl;
@@ -140,6 +139,7 @@ int main(){
 	}
 
 	Node *root = pq.top();
+	
 	cout << root->cnt << " "  << total_cnt << endl;
 
 	dfs_code(root);
@@ -177,17 +177,6 @@ int main(){
 
 	fwrite(out, 1, idx / 8, output_file);
 	cout << "debug : " << "compress success" << endl;
-
-	freopen(out_txt, "w", stdout);
-	for (int i = 0; i < 256; i++) {
-		if (index[i]) {
-			printf("%d\t%lf\t%d\t%s\n", i, (double)index[i]->cnt / total_cnt, index[i]->code_len, index[i]->code);
-		}
-		else {
-			printf("%d\t%s", i, "NULL");
-		}
-	}
-	//system("pause");
 	return 0;
 }
 
