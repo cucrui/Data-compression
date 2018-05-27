@@ -1,0 +1,120 @@
+> DQT marker after zigzag
+2	1	1	2	2	4	5	6	
+1	1	1	2	3	6	6	6	
+1	1	2	2	4	6	7	6	
+1	2	2	3	5	9	8	6	
+2	2	4	6	7	11	10	8	
+2	4	6	6	8	10	11	9	
+5	6	8	9	10	12	12	10	
+7	9	10	10	11	10	10	10	
+< DQT marker
+> DQT marker after zigzag
+2	2	2	5	10	10	10	10	
+2	2	3	7	10	10	10	10	
+2	3	6	10	10	10	10	10	
+5	7	10	10	10	10	10	10	
+10	10	10	10	10	10	10	10	
+10	10	10	10	10	10	10	10	
+10	10	10	10	10	10	10	10	
+10	10	10	10	10	10	10	10	
+< DQT marker
+> DHT marker (length=27)
+Huffman table DC[0] length=10
+val=04	code=00000000	codesize=02
+val=05	code=00000001	codesize=02
+val=06	code=00000002	codesize=02
+val=03	code=00000006	codesize=03
+val=02	code=0000000e	codesize=04
+val=01	code=0000001e	codesize=05
+val=00	code=0000003e	codesize=06
+val=09	code=0000007e	codesize=07
+val=07	code=000000fe	codesize=08
+val=08	code=000001fe	codesize=09
+> DHT marker (length=60)
+Huffman table AC[0] length=43
+val=00	code=00000000	codesize=02
+val=01	code=00000002	codesize=03
+val=03	code=00000003	codesize=03
+val=02	code=00000008	codesize=04
+val=04	code=00000009	codesize=04
+val=05	code=0000000a	codesize=04
+val=11	code=0000000b	codesize=04
+val=21	code=0000000c	codesize=04
+val=22	code=0000001a	codesize=05
+val=31	code=0000001b	codesize=05
+val=61	code=0000001c	codesize=05
+val=06	code=0000003a	codesize=06
+val=12	code=0000003b	codesize=06
+val=a1	code=0000003c	codesize=06
+val=32	code=0000007a	codesize=07
+val=41	code=0000007b	codesize=07
+val=62	code=0000007c	codesize=07
+val=13	code=000000fa	codesize=08
+val=51	code=000000fb	codesize=08
+val=23	code=000001f8	codesize=09
+val=42	code=000001f9	codesize=09
+val=71	code=000001fa	codesize=09
+val=81	code=000001fb	codesize=09
+val=91	code=000001fc	codesize=09
+val=15	code=000003fa	codesize=10
+val=52	code=000003fb	codesize=10
+val=63	code=000003fc	codesize=10
+val=07	code=000007fa	codesize=11
+val=14	code=000007fb	codesize=11
+val=33	code=000007fc	codesize=11
+val=53	code=000007fd	codesize=11
+val=16	code=00000ffc	codesize=12
+val=43	code=00000ffd	codesize=12
+val=08	code=00001ffc	codesize=13
+val=b1	code=00001ffd	codesize=13
+val=34	code=00003ffc	codesize=14
+val=c1	code=00003ffd	codesize=14
+val=24	code=00007ffc	codesize=15
+val=d1	code=0000fffa	codesize=16
+val=09	code=0000fffb	codesize=16
+val=72	code=0000fffc	codesize=16
+val=f0	code=0000fffd	codesize=16
+val=a2	code=0000fffe	codesize=16
+> DHT marker (length=28)
+Huffman table DC[1] length=11
+val=04	code=00000000	codesize=02
+val=05	code=00000001	codesize=02
+val=06	code=00000002	codesize=02
+val=03	code=00000006	codesize=03
+val=02	code=0000000e	codesize=04
+val=01	code=0000001e	codesize=05
+val=00	code=0000003e	codesize=06
+val=07	code=0000007e	codesize=07
+val=0a	code=000000fe	codesize=08
+val=09	code=000001fe	codesize=09
+val=08	code=000003fe	codesize=10
+> DHT marker (length=45)
+Huffman table AC[1] length=28
+val=00	code=00000000	codesize=02
+val=04	code=00000001	codesize=02
+val=01	code=00000004	codesize=03
+val=02	code=00000005	codesize=03
+val=03	code=00000006	codesize=03
+val=31	code=0000001c	codesize=05
+val=61	code=0000001d	codesize=05
+val=11	code=0000003c	codesize=06
+val=12	code=0000003d	codesize=06
+val=05	code=0000007c	codesize=07
+val=21	code=0000007d	codesize=07
+val=13	code=000000fc	codesize=08
+val=14	code=000000fd	codesize=08
+val=41	code=000000fe	codesize=08
+val=51	code=000001fe	codesize=09
+val=06	code=000007fc	codesize=11
+val=22	code=000007fd	codesize=11
+val=32	code=000007fe	codesize=11
+val=07	code=00001ffc	codesize=13
+val=15	code=00001ffd	codesize=13
+val=42	code=00001ffe	codesize=13
+val=08	code=0000fff8	codesize=16
+val=71	code=0000fff9	codesize=16
+val=23	code=0000fffa	codesize=16
+val=24	code=0000fffb	codesize=16
+val=33	code=0000fffc	codesize=16
+val=81	code=0000fffd	codesize=16
+val=a1	code=0000fffe	codesize=16
